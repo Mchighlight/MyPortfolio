@@ -1,6 +1,6 @@
 
 import "../styles/main.scss";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = ({Component, pageProps}) => {
   return <Component {...pageProps} />
