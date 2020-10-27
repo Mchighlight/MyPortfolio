@@ -2,11 +2,17 @@
 import React from 'react';
 import BaseLayout from '../components/layouts/BaseLayout';
 import { Row, Container, Col } from 'reactstrap';
+import Typed from 'react-typed';
 
 class Index extends React.Component {
+  constructor(props){
+    super(props);
+    this.roles = ['Developer', 'Data Engineer', 'Team Player', 'Cloud Computing', 'Python', 'SQL'];
+  }
+
   render() {
     return (
-      <BaseLayout>
+      <BaseLayout className="cover">
           <div className="main-section">
             <div className="background-image">
               <img src="/images/background-index.png" />
@@ -34,10 +40,21 @@ class Index extends React.Component {
                 <Col md="6" className="hero-welcome-wrapper">
                   <div className="hero-welcome-text">
                     <h1>
-                      Welcome to the portfolio website of Filip Jerga.
+                      Welcome to the portfolio website of Hung-Chih Huang.
                       Get informed, collaborate and discover projects I was working on through the years!
                     </h1>
                   </div>
+                      <Typed
+                      loop
+                      typeSpeed={70}
+                      backSpeed={70}
+                      strings={this.roles}
+                      backDelay={1000}
+                      loopCount={0}
+                      showCursor
+                      className="self-typed"
+                      cursorChar="|"
+                    />
                   <div className="hero-welcome-bio">
                     <h1>
                       Let's take a look on my work.

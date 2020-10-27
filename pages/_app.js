@@ -1,9 +1,11 @@
-import React from 'react' ;
 
-import "../styles/main.scss";
+import React from 'react';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "../styles/main.scss";
 
-class App extends React.Component { 
+
+class App extends React.Component {
 
   static async getInitialProps({Component, ctx}) {
     let pageProps = {};
@@ -15,9 +17,9 @@ class App extends React.Component {
     return { pageProps };
   }
 
-
-  render(){
-    const {Component, pageProps} = this.props;
+  render() {
+    debugger
+    const { Component, pageProps } = this.props;
     return <Component {...pageProps} />
   }
 }
