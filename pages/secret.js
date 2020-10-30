@@ -2,6 +2,7 @@ import BaseLayout from '@/components/layouts/BaseLayout';
 import BasePage from '@/components/BasePage';
 import { useGetUser } from '@/actions/user';
 import { useRouter } from 'next/router';
+import Redirect from '@/components/shared/Redirect' ;
 
 const Secret = () => {
   const { data, loading } = useGetUser();
@@ -12,9 +13,7 @@ const Secret = () => {
   }
 
   if (!data) {
-    // Todo: Improve return
-    router.push('/api/v1/login');
-    return null;
+    return <Redirect to="/api/v1/login" />
   } else {
     return (
       <BaseLayout user={data} loading={loading}>
