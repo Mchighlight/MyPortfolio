@@ -25,10 +25,10 @@ const BsNavBrand = () =>
   </Link>
 
 const LoginLink = () =>
-  <span className="nav-link port-navbar-link clikable">Login</span>
+  <BsNavLink href="/api/v1/login" title="Login" />
 
 const LogoutLink = () =>
-<span className="nav-link port-navbar-link clikable">Login</span>
+  <span className="nav-link port-navbar-link clickable">Logout</span>
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,11 +63,10 @@ const Header = () => {
           </Nav>
           <Nav navbar>
             <NavItem className="port-navbar-item">
-                <LoginLink />
+              <LoginLink />
             </NavItem>
-
             <NavItem className="port-navbar-item">
-                <LogoutLink />
+              <LogoutLink />
             </NavItem>
           </Nav>
         </Collapse>

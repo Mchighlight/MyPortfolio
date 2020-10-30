@@ -8,8 +8,10 @@
     "start": "set NODE_ENV=production && node server.js"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^0.11.0",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "dotenv-webpack": "^1.7.0",
     "express": "^4.17.1",
     "next": "^9.5.5",
     "next-routes": "^1.4.2",
