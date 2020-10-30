@@ -6,11 +6,11 @@ import { useGetUser } from '@/actions/user' ;
 const ROLES = ['Developer', 'Data Engineer', 'Team Player', 'Cloud Computing', 'Python', 'SQL'];;
 const Index = () => {
 
-  const { data, error, loading } = useGetUser() ;
-  debugger
+  const { data, loading } = useGetUser() ;
    
   return (
-    <BaseLayout className="cover">
+    <BaseLayout className="cover" user = {data} loading= {loading}>
+      
       <div className="main-section">
         <div className="background-image">
           <img src="/images/background-index.png" />
