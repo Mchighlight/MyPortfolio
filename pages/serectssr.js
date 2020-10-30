@@ -3,9 +3,11 @@
 
 import BaseLayout from '@/components/layouts/BaseLayout';
 import BasePage from '@/components/BasePage';
-import withAuth from '@/hoc/withAuth';
+import { useGetUser } from '@/actions/user' ;
 
-const Secret = ({user, loading}) => {
+const SecretSSR = () => {
+
+    const { data, loading } = useGetUser() ;
   return (
     <BaseLayout user={user} loading={loading}>
       <BasePage>
@@ -15,4 +17,4 @@ const Secret = ({user, loading}) => {
   )
 }
 
-export default withAuth(Secret);
+export default SecretSSR;
