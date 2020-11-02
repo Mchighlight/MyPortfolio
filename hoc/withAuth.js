@@ -14,7 +14,6 @@ const withAuth = Component => role => {
       return <Redirect ssr to="/api/v1/login" />
     } else {
       if (role && !isAuthorized(data, role)) {
-        debugger
         return <Redirect ssr to="/api/v1/login" />
       }
       

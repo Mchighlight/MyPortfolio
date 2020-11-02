@@ -5,7 +5,6 @@ import BasePage from '@/components/BasePage';
 import { authorizeUser, withAuth } from '@/utils/auth0';
 
 const SecretSSR = ({user, title}) => {
-  debugger
   return (
     <BaseLayout user={user} loading={false}>
       <BasePage>
@@ -36,6 +35,6 @@ const getTitle = () =>{
 export const getServerSideProps = withAuth(async () =>{
   const title = await getTitle();
   return title ;
-}) ;
+})() ;
 
 export default SecretSSR;
