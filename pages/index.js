@@ -9,7 +9,12 @@ const Index = () => {
   const { data, loading } = useGetUser() ;
    
   return (
-    <BaseLayout className="cover" user = {data} loading= {loading}>
+    <BaseLayout 
+    className="cover" 
+    user = {data} 
+    loading= {loading}
+    navClass = "transparent"
+    >
       
       <div className="main-section">
         <div className="background-image">
