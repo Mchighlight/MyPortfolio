@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { isAuthorized } from '@/utils/auth0';
 import {
   Collapse,
   Navbar,
@@ -43,10 +44,10 @@ const AdminMenu = () => {
     isOpen={isOpen}
     toggle={()=>setIsOpen(!isOpen)}>
       <DropdownToggle
-      className="port-dropdown-toggle" nav carret>
+      className="port-dropdown-toggle" nav caret>
         Admin
       </DropdownToggle>
-      <DropdownMenu>
+      <DropdownMenu right>
         <DropdownItem>
             <BsNavLink
              className="port-dropdown-item"
@@ -54,6 +55,21 @@ const AdminMenu = () => {
              title="Create Portfolio"
             />
         </DropdownItem>
+
+        <DropdownItem>
+            <BsNavLink
+              className="port-dropdown-item"
+              href="/blogs/editor"
+              title="Blog Editor"
+            />
+          </DropdownItem>
+          <DropdownItem>
+            <BsNavLink
+              className="port-dropdown-item"
+              href="/blogs/dashboard"
+              title="Dashboard"
+            />
+          </DropdownItem>
        </DropdownMenu> 
     </Dropdown>
   )
@@ -107,7 +123,7 @@ const Header = ({user, loading, className}) => {
               <>
               { user &&
                 <>
-                  <AdminMenu />
+                  { isAuthorized(user, 'admin') && <AdminMenu />}
                   <NavItem className="port-navbar-item">
                   <LogoutLink />
                 </NavItem>
