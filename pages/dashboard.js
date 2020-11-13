@@ -1,8 +1,8 @@
 
 import BaseLayout from '@/components/layouts/BaseLayout';
 import BasePage from '@/components/BasePage';
-import  withAuth  from 'hoc/withAuth';
-import { Row, Col } from 'reactstrap';
+import withAuth from 'hoc/withAuth';
+import { Row, Col, Button } from 'reactstrap';
 import Masthead from 'components/shared/Masthead';
 import PortDropdown from 'components/shared/Dropdown';
 import Link from 'next/link';
@@ -33,10 +33,10 @@ const Dashboard = ({user, loading}) => {
         handlers: {
           onClick: () => changeBlogStatus(blog._id, option.value)}
       },
-      {key: `${blog._id}-delete`,
-       text: 'Delete', 
-       handlers: { 
-        onClick: () => changeBlogStatus(blog._id, 'deleted')}
+      { key: `${blog._id}-delete`,
+        text: 'Delete',
+        handlers: {
+          onClick: () => changeBlogStatus(blog._id, 'deleted')}
       }
     ]
   }
@@ -57,7 +57,15 @@ const Dashboard = ({user, loading}) => {
 
   return (
     <BaseLayout navClass="transparent" user={user} loading={loading}>
-      <Masthead imagePath="/images/home-bg.jpg" />
+      <Masthead imagePath="/images/home-bg.jpg">
+        <h1>Blogs Dashboard</h1>
+        <span className="subheading">
+          Let's write some nice blog today{' '}
+            <Link href='/blogs/editor'>
+            <Button color="primary">Create a new Blog</Button>
+          </Link>
+        </span>
+      </Masthead>
       <BasePage className="blog-user-page">
         <Row>
           <Col md="6" className="mx-auto text-center">
