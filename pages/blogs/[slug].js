@@ -6,7 +6,7 @@ import { useGetUser } from '@/actions/user';
 
 import BlogApi from 'lib/api/blogs';
 
-const BlogDetail = ({blog}) => {
+const BlogDetail = ({blog, author}) => {
   const { data, loading } = useGetUser();
   return (
     <BaseLayout user={data} loading={loading}>
@@ -30,8 +30,8 @@ export async function getStaticPaths() {
   }
   
 export async function getStaticProps({params}) {
-const json = await new BlogApi().getBySlug(params.slug);
-return {props: {blog: json.data}}
+  const { data: {blog, user: author}} = await new BlogApi().getBySlug(params.slug);
+  return {props: {blog, author}}
 }
 
 export default BlogDetail;
