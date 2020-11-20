@@ -30,6 +30,7 @@ const Portfolios = ({portfolios: initialPortfolios}) => {
     <BaseLayout user={dataU} loading={loadingU}>
       <BasePage
         header="Portfolios"
+        title="Newest Portfolios - Hung-Chih Huang"
         className="portfolio-page">
         <Row>
           { portfolios.map(portfolio =>
