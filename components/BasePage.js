@@ -8,6 +8,7 @@ const BasePage = props => {
     className = '',
     header,
     title = "Portfolio - Hung-Chih Huang",
+    metaDescription="My name is Hung Chih Huang ( Henry Huang ) 黃鴻志 and I am an experienced software engineer and freelance developer. Throughout my career, I have acquired advanced technical knowledge and the ability to explain programming topics clearly and in detail to a broad audience.",
     children } = props;
 
   const pageType = indexPage ? 'index-page' : 'base-page';
@@ -16,6 +17,15 @@ const BasePage = props => {
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <title>{title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          key="description"
+          content={metaDescription} />
+        <meta
+          name="title"
+          key="title"
+          content={title} />
       </Head>
       <div className={`${pageType} ${className}`}>
         <Container>
