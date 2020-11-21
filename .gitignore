@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-/slate-simple-editor
 /.pnp
 .pnp.js
 
